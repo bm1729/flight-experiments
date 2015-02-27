@@ -20,8 +20,7 @@ module.exports = function(grunt) {
         browser: true,
         globals: {
           require: true,
-          module: true,
-          __dirname: true
+          console: true
         }
       },
       gruntfile: {
