@@ -14,11 +14,14 @@ module.exports = function(grunt) {
         noarg: true,
         sub: true,
         undef: true,
-        unused: true,
+        unused: false,
         boss: true,
         eqnull: true,
         browser: true,
-        globals: {}
+        globals: {
+          require: true,
+          module: true
+        }
       },
       gruntfile: {
         src: 'Gruntfile.js'
