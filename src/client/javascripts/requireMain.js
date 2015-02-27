@@ -19,8 +19,8 @@
   
     function(debug, main) {
       debug.enable(true);
-      require(['app/main'], function(initialise) {
-        initialise();
+      require(['app/main'], function(initialize) {
+        initialize();
         console.log('Require started correctly!');
       });
     }

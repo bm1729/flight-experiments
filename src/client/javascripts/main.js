@@ -1,10 +1,10 @@
-define(['app/myFirstComponent'], function(myFirstComponent) {
+define(['app/titleComponent'], function(titleComponent) {
     
     'use strict';
     
-    function initialise() {
-        myFirstComponent.attachTo(document);
+    function initialize() {
+        titleComponent.attachTo('#title');
     }
     
-    return initialise;
+    return initialize;
 });
