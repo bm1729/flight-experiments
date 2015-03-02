@@ -8,7 +8,8 @@
     baseUrl: '',
     paths: {
       'flight': '/third-party/flight',
-      'app': '/app/javascripts'
+      'app': '/app/javascripts',
+      'components': '/app/javascripts/components'
     }
   });
   

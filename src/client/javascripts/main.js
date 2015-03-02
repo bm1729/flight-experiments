@@ -1,9 +1,12 @@
-define(['app/titleComponent'], function(titleComponent) {
+define(['components/dataComponent', 'components/detailComponent', 'components/listComponent'], 
+    function(dataComponent, detailComponent, listComponent) {
     
     'use strict';
     
     function initialize() {
-        titleComponent.attachTo('#title');
+        dataComponent.attachTo(document);
+        detailComponent.attachTo('#detail');
+        listComponent.attachTo('#list');
     }
     
     return initialize;
