@@ -1,12 +1,11 @@
 /* globals requirejs */
 
-'use strict';
-
 var tests = Object.keys(window.__karma__.files).filter(function (file) {
   return (/\.spec\.js$/.test(file));
 });
 
 requirejs.config({
+
   // Karma serves files from '/base'
   baseUrl: '/base/bower_components',
 
