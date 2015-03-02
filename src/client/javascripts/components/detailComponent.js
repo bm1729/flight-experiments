@@ -1,5 +1,3 @@
-/* globals $ */
-
 define(['flight/lib/component'], function(defineComponent) {
     
     'use strict';
