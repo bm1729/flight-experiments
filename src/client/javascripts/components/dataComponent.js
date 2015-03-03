@@ -41,10 +41,14 @@ define(['flight/lib/component'], function(defineComponent) {
         };
         
         this.uiItemRequested = function(event, request) {
-            var selectedDatum = $.grep(data, function(datum, index) {
-                return +request.id === datum.id;
-            })[0];
-            this.trigger('dataItemServed', selectedDatum);
+            if (request && request.id) {
+                var selectedDatum = $.grep(data, function(datum, index) {
+                    return +request.id === datum.id;
+                })[0];
+                if (selectedDatum) {
+                    this.trigger('dataItemServed', selectedDatum);
+                }
+            }
         };
         
         this.after('initialize', function() {
