@@ -1,12 +1,13 @@
 /* globals $ */
 
-define(['flight/lib/component'], function(defineComponent) {
+define(['flight/lib/component', 'mixins/loggerMixin'], function(defineComponent, loggerMixin) {
     
     'use strict';
     
     function listComponent() {
         
         this.dataItemsServed = function(event, data) {
+            this.info('listComponent', 'dataItemsServed');
             var markup = '';
             $.each(data.data, function(index, value) {
                 markup += "<li id=\"" + value.id + "\" class=\"list-group-item\">" + value.name + "</li>";
@@ -16,6 +17,7 @@ define(['flight/lib/component'], function(defineComponent) {
         };
         
         this.selectionChanged = function(event) {
+            this.info('listComponent', 'selectionChanged');
             var id = event.target.id;
             this.trigger('uiItemSelectionChanged', {id: id});
         };
@@ -27,5 +29,5 @@ define(['flight/lib/component'], function(defineComponent) {
         });
     }
     
-    return defineComponent(listComponent);
+    return defineComponent(listComponent, loggerMixin);
 });

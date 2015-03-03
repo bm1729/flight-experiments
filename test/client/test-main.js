@@ -12,7 +12,8 @@ requirejs.config({
   paths: {
     'flight': 'flight',
     'app': '../src/client/javascripts',
-    'component': '../src/client/javascripts/components'
+    'component': '../src/client/javascripts/components',
+    'mixins': '../src/client/javascripts/mixins'
   },
 
   // ask Require.js to load these files (all our tests)

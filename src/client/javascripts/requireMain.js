@@ -9,7 +9,8 @@
     paths: {
       'flight': '/third-party/flight',
       'app': '/app/javascripts',
-      'components': '/app/javascripts/components'
+      'components': '/app/javascripts/components',
+      'mixins': '/app/javascripts/mixins'
     }
   });
   

@@ -1,6 +1,6 @@
 /* globals $ */
 
-define(['flight/lib/component'], function(defineComponent) {
+define(['flight/lib/component', 'mixins/loggerMixin'], function(defineComponent, loggerMixin) {
     
     'use strict';
     
@@ -37,10 +37,12 @@ define(['flight/lib/component'], function(defineComponent) {
     function dataComponent() {
         
         this.uiItemsRequested = function() {
+            this.info('dataComponent', 'uiItemsRequested');
             this.trigger('dataItemsServed', {data: data});
         };
         
         this.uiItemRequested = function(event, request) {
+            this.info('dataComponent', 'uiItemRequested');
             if (request && request.id) {
                 var selectedDatum = $.grep(data, function(datum, index) {
                     return +request.id === datum.id;
@@ -57,5 +59,5 @@ define(['flight/lib/component'], function(defineComponent) {
         });
     }
     
-    return defineComponent(dataComponent);
+    return defineComponent(dataComponent, loggerMixin);
 });

@@ -1,4 +1,4 @@
-define(['flight/lib/component'], function(defineComponent) {
+define(['flight/lib/component', 'mixins/loggerMixin'], function(defineComponent, loggerMixin) {
     
     'use strict';
     
@@ -9,12 +9,14 @@ define(['flight/lib/component'], function(defineComponent) {
         };
         
         this.uiItemSelectionChanged = function(event, request) {
+            this.info('hashComponent', 'uiItemSelectionChanged');
             if (request.id !== getHash()) {
                 window.location.hash = request.id;
             }
         };
     
         this.hashchange = function() {
+            this.info('hashComponent', 'hashchange');
             this.trigger(document, 'uiItemSelectionChanged', {id: getHash()});
         };
         
@@ -26,5 +28,5 @@ define(['flight/lib/component'], function(defineComponent) {
         });
     }
     
-    return defineComponent(hashComponent);
+    return defineComponent(hashComponent, loggerMixin);
 });
