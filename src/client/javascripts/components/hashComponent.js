@@ -14,13 +14,15 @@ define(['flight/lib/component'], function(defineComponent) {
             }
         };
     
-        this.hashchange = function(event) {
+        this.hashchange = function() {
             this.trigger(document, 'uiItemSelectionChanged', {id: getHash()});
         };
         
         this.after('initialize', function() {
             this.on(window, 'hashchange', this.hashchange);
             this.on(document, 'uiItemSelectionChanged', this.uiItemSelectionChanged);
+            
+            this.hashchange();
         });
     }
     

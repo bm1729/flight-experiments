@@ -4,10 +4,10 @@ define(['components/dataComponent', 'components/detailComponent', 'components/li
     'use strict';
     
     function initialize() {
-        hashComponent.attachTo(window);
         dataComponent.attachTo(document);
         detailComponent.attachTo('#detail');
         listComponent.attachTo('#list');
+        hashComponent.attachTo(window);
     }
     
     return initialize;
