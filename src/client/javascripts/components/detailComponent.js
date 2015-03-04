@@ -3,8 +3,6 @@ define(['flight/lib/component', 'mixins/loggerMixin'], function(defineComponent,
     'use strict';
     
     function detailComponent() {
-        
-        var currentlySelectedId = null;
     
         this.dataItemServed = function(event, datum) {
             this.info('detailComponent', 'dataItemServed');
@@ -14,11 +12,8 @@ define(['flight/lib/component', 'mixins/loggerMixin'], function(defineComponent,
         };
         
         this.uiItemSelectionChanged = function(data, selection) {
-            if (selection.id !== currentlySelectedId) {
-                currentlySelectedId = selection.id;
-                this.info('detailComponent', 'uiItemSelectionChanged');
-                this.trigger('uiItemRequested', selection);
-            }
+            this.info('detailComponent', 'uiItemSelectionChanged');
+            this.trigger('uiItemRequested', selection);
         };
         
         this.after('initialize', function() {

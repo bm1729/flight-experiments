@@ -1,5 +1,5 @@
-define(['components/dataComponent', 'components/detailComponent', 'components/listComponent', 'components/hashComponent'], 
-    function(dataComponent, detailComponent, listComponent, hashComponent) {
+define(['components/dataComponent', 'components/detailComponent', 'components/listComponent'], 
+    function(dataComponent, detailComponent, listComponent) {
     
     'use strict';
     
@@ -7,7 +7,6 @@ define(['components/dataComponent', 'components/detailComponent', 'components/li
         dataComponent.attachTo(document);
         detailComponent.attachTo('#detail');
         listComponent.attachTo('#list');
-        hashComponent.attachTo(window);
     }
     
     return initialize;
